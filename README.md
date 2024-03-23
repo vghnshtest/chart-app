@@ -1,3 +1,5 @@
+A reusable card component where the user needs to provide a title, description, data, and select a chart type.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
