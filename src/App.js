@@ -1,8 +1,17 @@
-import logo from "./logo.svg";
-import "./App.css";
+import React from "react";
+import PieChart from "./components/PieChart";
+import BarChart from "./components/BarChart";
 
-function App() {
-  return <div className="App">Hello</div>;
-}
+const data = [30, 20, 10, 40];
+const colors = ["red", "blue", "green", "orange"];
+
+const App = () => {
+  return (
+    <div>
+      <PieChart data={data} colors={colors} />
+      <BarChart />
+    </div>
+  );
+};
 
 export default App;

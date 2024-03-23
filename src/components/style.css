@@ -1,0 +1,42 @@
+/* Pie chart css */
+.pie-chart-container {
+    position: relative;
+    height: 20rem;
+  }
+  
+.pie-chart-container canvas { 
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+ 
+.pie-chart-container canvas:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+
+/* Bar chart css */
+  .bar-chart {
+    display: flex;
+    height: 0.8rem;
+  }
+  
+  .bar {
+    transition: width 0.5s;
+    box-sizing: border-box;
+  }
+  
+  .bar:nth-child(odd) {
+    background: black;
+  }
+  
+  .bar:nth-child(even) {
+    background: green;
+  }
+  
+  .tooltip {
+    background-color: lightgray !important;
+    color: black !important;
+    border-radius: 5px !important;
+  }
+  
