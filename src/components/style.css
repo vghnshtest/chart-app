@@ -2,6 +2,8 @@
 .pie-chart-container {
     position: relative;
     height: 20rem;
+    display: flex;
+    justify-content: center;
   }
   
 .pie-chart-container canvas { 
@@ -10,8 +12,7 @@
 }
  
 .pie-chart-container canvas:hover {
-    transform: scale(1.05);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
   }
 
 
@@ -26,17 +27,77 @@
     box-sizing: border-box;
   }
   
-  .bar:nth-child(odd) {
-    background: black;
-  }
   
-  .bar:nth-child(even) {
-    background: green;
-  }
   
   .tooltip {
     background-color: lightgray !important;
     color: black !important;
     border-radius: 5px !important;
+    font-weight: 500;
   }
   
+/* Card css */
+
+.card-wrapper{
+  background-color: white;
+  border-radius: 10px;
+  padding: 28px;
+  margin: 20px;
+  font-family: 'IBM Plex Sans';
+  width: 420px;
+  height: fit-content;
+}
+.title{
+  font-size: 30px;
+}
+.desc{
+  margin-top: 12px;
+  font-size: 18px;
+  margin-bottom: 26px;
+  line-height: 26px;
+  font-weight: 400;
+}
+.chart{
+  padding: 0 10px;
+  margin-bottom: 24px;
+  
+}
+.legend{
+  height: 12px;
+  width: 12px;
+  display: block;
+}
+.table-wrapper{
+  overflow-x: auto;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 14px;
+}
+
+table, th, td {
+  border: none;
+}
+
+ td {
+  padding: 6px 8px 6px 0;
+  text-align: left;
+}
+
+.data{
+  display: flex;
+  align-items :center;
+  gap: 8px;
+}
+
+
+@media screen and (max-width: 600px) {
+  .pie-chart-container{
+    height: 12rem;
+  }
+  td{
+    display: flex;
+  }
+}
+

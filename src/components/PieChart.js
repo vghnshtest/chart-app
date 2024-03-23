@@ -4,29 +4,15 @@ import "./style.css";
 import { Chart, ArcElement, Tooltip } from "chart.js";
 Chart.register(ArcElement, Tooltip);
 
-const PieChart = () => {
-  const data = {
-    labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+const PieChart = ({ data }) => {
+  const chartData = {
+    labels: data.map((data) => data.name),
     datasets: [
       {
-        label: "# of Votes",
-        data: [12, 19, 3, 5, 2, 3],
-        backgroundColor: [
-          "rgba(255, 99, 132, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(75, 192, 192, 0.2)",
-          "rgba(153, 102, 255, 0.2)",
-          "rgba(255, 159, 64, 0.2)",
-        ],
-        borderColor: [
-          "rgba(255, 99, 132, 1)",
-          "rgba(54, 162, 235, 1)",
-          "rgba(255, 206, 86, 1)",
-          "rgba(75, 192, 192, 1)",
-          "rgba(153, 102, 255, 1)",
-          "rgba(255, 159, 64, 1)",
-        ],
+        label: "Percent",
+        data: data.map((data) => data.percent),
+        backgroundColor: data.map((data) => data.color),
+        borderColor: data.map((data) => data.color),
         borderWidth: 0.1,
       },
     ],
@@ -35,7 +21,7 @@ const PieChart = () => {
   return (
     <div className="pie-chart-container">
       <Pie
-        data={data}
+        data={chartData}
         height={10}
         options={{
           plugins: {
